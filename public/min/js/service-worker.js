@@ -1,0 +1,1 @@
+"use strict";(void 0).addEventListener("install",function(t){console.log("install")}),(void 0).addEventListener("activate",function(t){console.log("activated!")});

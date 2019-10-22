@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Worker Test</title>
+
+    <style>
+        @import url("public/min/css/test.css")
+    </style>
+</head>
+<body>
+    <div id="test-div">Gulp Hello</div>
+
+
+    <script>
+        if('serviceWorker' in navigator) {
+            console.log('Service Worker: 檢查瀏覽器是否支援: OK');
+
+            // navigator.serviceWorker.getRegistrations()
+            // .then(function(registrations) { 
+            //     for(let registration of registrations) { registration.unregister() } 
+            //     console.log(registrations);
+            // })
+            window.addEventListener('load', () => {
+                console.log('Service Worker: load');
+                navigator.serviceWorker.register('/service-worker.js') // 註冊 Service Worker
+                .then(function(reg) {
+                    console.log('Service Worker: 註冊成功 Scope is ' + reg.scope); // 註冊成功
+                }).catch(function(error) {
+                    console.log('Service Worker: 註冊失敗: ' + error); // 註冊失敗
+                });
+            })
+            
+        } else {
+            console.log('Service Worker: 檢查瀏覽器是否支援: NO')
+        }
+    </script>
+
+</body>
+</html>
