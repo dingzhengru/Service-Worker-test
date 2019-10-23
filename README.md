@@ -72,13 +72,13 @@ self.addEventListener('fetch', (event) => {
 ```
 ## Methods
 Methods(MDN): https://developer.mozilla.org/en-US/docs/Web/API/Cache  
-cache method:  
+### cache method:  
 >caches.open(): 創建或打開一個cache  
 >caches.match(): 在cache storage找緩存的資料  
 >caches.keys(): 得到所有的cache  
 >caches.delete(): 刪除某個cache('版本名') ex: caches.delete('v1')  
 >cache.add()新增快取資源 ex: cache.add('/base.css')  
 
-event method:  
+### event method:  
 >waitUntil(): 確保 Service Worker 在安裝完畢後才去處理快取  
 >respondWith(): fetch event 會攔截HTTP請求，讓我們能利用respondWith()處理後續回應。  
